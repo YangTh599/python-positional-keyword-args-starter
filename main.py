@@ -1,5 +1,5 @@
-# Student name
-# Current date
+# Thayer Yang
+# 11 NOV 2024
 # Practice: Positional & Keyword Arguments in Python
 
 
@@ -12,18 +12,49 @@
 # Write a function that takes two parameters -- first name and age
 # Use an f-string to welcome the user by first name and to display his/her age
 
+def greet_user(name, age):
+    print(f'Hello {name.title()}!')
+    print(f'You are {age} years old!')
+
+name = input("What is your name?: ")
+surname = input("What is your last name?: ")
+age = input("How old are you?: ")
+
+greet_user(name,age)
+
+print()
 
 # Area of a Rectangle
 # Write a function to calculate the area (in square feet) of a rectangle
 # Your two parameters will be length and width
 # The print statement in the function should display the length, width and area (in square feet) of your rectangle
 
+def find_area_rect(length,width):
+    area = length * width
+
+    print(f'Rectangle')
+    print(f'Length: {length} inches')
+    print(f'Width: {width} inches')
+    print(f'Area: {area} inches squared')
+
+find_area_rect(5,4)
+
+print()
+
 # Sum of Numbers
 # Write a function that finds the sum of three numbers
 # Your three parameters will be num1, num2, and num3
 # The print statement in the function should display the sum of the three numbers
 
+def sum_num(num1, num2, num3):
+    num_list = [num1, num2, num3]
+    total = sum(num_list)
 
+    print(f"The sum of {num1}, {num2}, and {num3} is {total}")
+
+sum_num(3,4,2)
+
+print()
 
 # KEYWORD ARGUMENTS
 # Create the three functions outlined below
@@ -35,9 +66,25 @@
 # Examples of titles include: Mr., Ms., Mrs. and Dr.
 # When calling your function, change the order of your keyword arguments so that they don't match the order of your function parameters
 
+def greet_title(title, first_name, last_name):
+    print(f'Hello {title} {first_name.title()} {last_name.title()}')
+
+greet_title( last_name=surname, title="Mr.", first_name=name)
+
+print()
+
 # Describe Your Pet
 # Write a function that says what type of pet you have and what your pet's name is
 # Your function parameters will be pet_type and pet_name
 
+def describe_pet(name, type):
+    print(f'You have a {type} named {name}')
+
+describe_pet(type="Boxer German-Shepard", name="Bowser")
+
+print()
+
 # Updated Function
 # Choose any ONE of the first three functions from this project and rewrite it below using keyword arguments
+
+greet_user(age=age, name=name)
